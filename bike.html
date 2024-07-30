@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map and Comfort Selection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: row; 
+            justify-content: space-between; 
+            align-items: flex-start; 
+        }
+        .title-container {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px; 
+            position: absolute;
+            top: 20px;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .map-container {
+            width: 40%; 
+            margin-top: 80px; 
+        }
+        .comfort-container {
+            width: 55%; 
+            display: flex;
+            flex-direction: column; 
+            align-items: flex-start; 
+            margin-top: 100px; 
+        }
+        .search-container {
+            width: 100%;
+            max-width: 400px; 
+            margin-bottom: 20px; 
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        iframe {
+            width: 100%;
+            height: 300px; 
+            border: 0;
+        }
+        .item {
+            display: flex;
+            align-items: center; 
+            margin-bottom: 20px; 
+        }
+        .item img {
+            width: 80px; 
+            height: auto; 
+            border-radius: 5px; 
+            margin-right: 5px; 
+        }
+        .box {
+            width: 400px; 
+            height: 40px; 
+            border-radius: 5px; 
+            color: #000000; 
+            font-size: 16px; 
+            padding: 5px; 
+            box-sizing: border-box; 
+            text-align: left; 
+            cursor: pointer; 
+            border: 2px solid; 
+        }
+        .box-first {
+            border-color: #000; 
+            background-color: #ffeb3b; 
+            margin-left: 90px;
+        }
+        .box-second, .box-third {
+            border-color: #ccc; 
+            background-color: #ffffff; 
+            color: grey; 
+            margin-left: 90px;
+        }
+        .submit-button {
+            width: 100%; 
+            max-width: 200px; 
+            height: 40px; 
+            border-radius: 5px; 
+            background-color: rgb(56, 171, 243); 
+            color: white; 
+            font-size: 16px; 
+            border: none; 
+            cursor: pointer; 
+            margin-top: 20px; 
+            text-align: center; 
+            margin-left: 280px;
+        }
+        .submit-button:hover {
+            background-color: #105180; 
+        }
+        .back-icon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            text-decoration: none;
+            color: #333;
+        }
+        .back-icon:hover {
+            color: #000; 
+        }
+    </style>
+</head>
+<body>
+    <div class="title-container">
+        <div class="title">CADE</div>
+    </div>
+    <a href="home.html" class="back-icon">&#x2190;</a>
+    <div class="map-container">
+        <div class="search-container">
+            <input type="text" id="search1" placeholder="CURRENT LOCATION">
+        </div>
+        <div class="search-container">
+            <input type="text" id="search2" placeholder="DESTINATION">
+        </div>
+        
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.6289966385393!2d80.089677473813!3d13.122673611550638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52882ca772fc35%3A0x7927d3f682557976!2sImmanuel%20St%2C%20Gandhi%20Nagar%2C%20Avadi%2C%20Tamil%20Nadu%20600054!5e0!3m2!1sen!2sin!4v1722094340528!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <script>
+            document.getElementById('search1').addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault(); 
+                    document.getElementById('search2').focus(); 
+                }
+            });
+        </script>
+    </div>
+
+    <div class="comfort-container">
+        <div class="title" style="margin-left: 200px; margin-bottom: 20px;">SELECT YOUR COMFORT</div>
+        <div class="item">
+            <img src="bike.JPG" alt="Image 1">
+            <button class="box box-first">Bike</button>
+        </div>
+        <div class="item">
+            <img src="cab.png" alt="Image 2">
+            <button class="box box-second">Cab</button>
+        </div>
+        <div class="item">
+            <img src="auto.JPG" alt="Image 3">
+            <button class="box box-third">Auto</button>
+        </div>
+        <a href="payment.html">submit-button">BOOK</button></a>
+    </div>
+</body>
+</html>

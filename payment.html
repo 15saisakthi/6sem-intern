@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #para1 {
+            border: 3px solid black;
+            color: black;
+            font-size: larger;
+            text-align: center;
+            padding: 5px;
+            margin-left: 30px;
+            margin-right: 800px;
+            margin-top: 80px;
+        }
+        .blue-text {
+            color: #13739c;
+            font-size: larger;
+        }
+
+        .back-icon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            text-decoration: none;
+            color: #333;
+        }
+        .back-icon:hover {
+            color: #000; 
+        }
+
+        .payment-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            background-color: white;
+            border: 2px solid #333;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+        .payment-button:hover {
+            background-color: #e8d43e;
+            color: black;
+        }
+        .payment-buttons {
+            display: flex;
+            align-items: center;
+            margin-top: 100px;
+            margin-left: 120px;
+        }
+        .form-container {
+            display: none;
+            position: absolute;
+            top: 150px; 
+            right: 30px; 
+            width: 400px; 
+            margin-right: 200px;
+        }
+        .form-container.active {
+            display: block;
+        }
+        .form-container form {
+            padding: 30px; 
+            border-radius: 10px;
+            background-color: white;
+            font-size: large;
+        }
+        .form-container form input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: large;
+        }
+        .form-container form input[type="submit"] {
+            width: 40%;
+            padding: 10px;
+            margin-bottom: 200px;
+            font-size: large;
+            margin-left: 100px;
+        }
+        .payment-icons img {
+            width: 80px;
+            height: auto;
+            margin-right: 10px;
+        }
+    </style>
+    <script>
+        function showForm(formId) {
+            document.getElementById('cashForm').classList.remove('active');
+            document.getElementById('cardForm').classList.remove('active');
+            document.getElementById('upiForm').classList.remove('active');
+            document.getElementById(formId).classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <a href="cab.html" class="back-icon">&#x2190;</a>
+    <p style="font-size: 24px; margin-top: 80px; margin-left: 210px;"><b>PAYMENT</b></p>
+    <p id="para1"><br><b>TOTAL AMOUNT TO PAY </b><br><br><span class="blue-text"><b>RS.0</b></span></p>
+    <p style="font-size: 20px; margin-left: 200px; margin-top: 100px;"><b>PAYMENT MODE</b></p>
+    <div class="payment-buttons">
+        <button class="payment-button" onclick="showForm('cashForm')">Cash</button>
+        <button class="payment-button" onclick="showForm('cardForm')">Card</button>
+        <button class="payment-button" onclick="showForm('upiForm')">UPI</button>
+    </div>
+    <div class="form-container" id="cashForm">
+        <form>
+            <h3>Cash Payment</h3>
+            <label for="cashAmount">Amount:</label><br>
+            <input type="text" id="cashAmount" name="cashAmount"><br>
+            <input type="submit" value="CONFIRM">
+        </form>
+    </div>
+    <div class="form-container" id="cardForm">
+        <form>
+            <h3>Card Payment</h3>
+            <label for="cardNumber">Card Number:</label><br>
+            <input type="text" id="cardNumber" name="cardNumber"><br>
+            <label for="expiryDate">Expiry Date:</label><br>
+            <input type="text" id="expiryDate" name="expiryDate"><br>
+            <label for="cvv">CVV:</label><br>
+            <input type="text" id="cvv" name="cvv"><br>
+            <input type="submit" value="CONFIRM">
+        </form>
+    </div>
+    <div class="form-container" id="upiForm">
+        <form>
+            <h3>UPI Payment</h3>
+            <div class="payment-icons">
+                <img src="gpay.JPG" alt="GPay">
+                <img src="paytm.JPG" alt="Paytm">
+                <img src="phonepe.JPG" alt="PhonePe">
+            </div>
+            <label for="upiId">UPI ID:</label><br>
+            <input type="text" id="upiId" name="upiId"><br>
+            <input type="submit" value="CONFIRM">
+        </form>
+    </div>
+</body>
+</html>

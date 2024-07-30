@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map and Services</title>
+    <style>
+        .back-icon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            text-decoration: none;
+            color: #333;
+        }
+        .back-icon:hover {
+            color: #000; 
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            background: #f9de11;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px; 
+            width: 100%; 
+            position: absolute; 
+            top: 10px; 
+            left: 0;
+        }
+        .map-container {
+            margin-left: 20px; 
+            margin-top: 60px;
+        }
+        iframe {
+            width: 600px;
+            height: 450px;
+            border: 0;
+        }
+        .container {
+            width: 700px; 
+            margin-top: 80px; 
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px; 
+        }
+        .box {
+            width: 30%; 
+            box-sizing: border-box;
+            padding: 5px; 
+            background: #0d7ecf; 
+            border-radius: 6px; 
+            text-align: center;
+            margin-left: 50px; 
+        }
+        .box:first-child {
+            margin-left: 0; 
+        }
+        .box img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px; 
+            transition: opacity 0.3s ease, filter 0.3s ease; 
+        }
+        .box:hover img {
+            opacity: 0.6; 
+            filter: brightness(80%) sepia(30%) hue-rotate(190deg); 
+        }
+        .box p {
+            color: white;
+            margin: 0; 
+        }
+        .text-container {
+            text-align: right;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <a href="login.html" class="back-icon">&#x2190;</a>
+    <div class="title">CADE</div> 
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3885.6289966385393!2d80.089677473813!3d13.122673611550638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1722084380214!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="container">
+        <div class="text-container">
+            <p style="margin-right: 300px;"><b>SELECT SERVICE</b></p>
+        </div>
+        <div class="row">
+            <div class="box">
+                <img src="driver.jpeg" alt="Image 1">
+                <p>DRIVER</p>
+            </div>
+            <div class="box">
+              <a href="cab.html"  ><img src="cab.png" alt="Image 2"></a>
+                <p>CAB</p>
+            </div>
+            <div class="box">
+             <a href="auto.html" >  <img src="auto.JPG" alt="Image 3"></a>
+                <p>AUTO</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="box">
+             <a href="bike.html">  <img src="bike.JPG" alt="Image 4"></a>
+                <p>BIKE</p>
+            </div>
+            <div class="box">
+                <img src="transport.JPG" alt="Image 5">
+                <p>TRANSPORT</p>
+            </div>
+            <div class="box">
+                <img src="parsel.JPG" alt="Image 6">
+                <p>PARSEL</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

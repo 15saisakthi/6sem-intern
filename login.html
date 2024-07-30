@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f9de11;
+        }
+
+        .outer-container {
+            position: relative;
+            width: 75vw; 
+            height: 75vh; 
+            max-width: 600px; 
+            max-height: 800px; 
+            box-sizing: border-box; 
+        }
+
+        .header-text {
+            position: absolute;
+            top: -60px; 
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+        }
+
+        .login-container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #333;
+        }
+
+        .login-container .input-group {
+            position: relative;
+            margin: 15px 0;
+            width: 100%;
+        }
+
+        .login-container input {
+            width: 95%;
+            padding: 10px;
+            padding-right: 50px; 
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 18px;
+        }
+
+        .login-container .toggle-password {
+            position: absolute;
+            right: 20px; 
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding: 0 10px;
+        }
+
+        .login-container .toggle-password img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #3498db;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px; 
+        }
+
+        .login-container button:hover {
+            background-color: #2980b9;
+        }
+
+        .login-container .error {
+            color: red;
+            display: none;
+            margin-bottom: 10px;
+        }
+
+        .login-container .forgot-password {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .login-container .forgot-password a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .login-container .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        .login-container .no-account {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .login-container .no-account a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .login-container .no-account a:hover {
+            text-decoration: underline;
+        }
+
+        .social-login {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px; 
+        }
+
+        .social-login img {
+            width: 40px; 
+            height: 40px; 
+            cursor: pointer;
+        }
+
+        .social-login img:hover {
+            opacity: 0.8; 
+        }
+    </style>
+</head>
+<body>
+    <div class="outer-container">
+        <div class="header-text"><b> CADE</b></div>
+        <div class="login-container">
+            <h2>Login</h2>
+            <div class="error" id="error-message">Invalid username or password</div>
+            <form id="login-form">
+                <div class="input-group">
+                    <input type="text" id="username" placeholder="Username" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Password" required>
+                    <span class="toggle-password" onclick="togglePassword()">
+                        
+                        <img id="toggle-icon" src="https://img.icons8.com/ios/50/000000/visible.png" alt="Eye Icon">
+                    </span>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <div class="forgot-password">
+                <a href="#">Forgot Password?</a>
+            </div>
+            <div class="no-account">
+                <p>No account? <a href="create.html">create account</a></p> 
+            </div>
+            <p style="text-align: center; font-size: large;"><b>LOGIN WITH</b></p>
+            <div class="social-login">
+                <a href="#"><img src="https://img.icons8.com/ios/50/000000/google-logo.png" alt="Google"></a>
+                <a href="#"><img src="https://img.icons8.com/ios/50/000000/facebook-new.png" alt="Facebook"></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function togglePassword() {
+            var passwordField = document.getElementById('password');
+            var passwordToggleIcon = document.getElementById('toggle-icon');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                passwordToggleIcon.src = 'https://img.icons8.com/ios/50/000000/invisible.png'; 
+            } else {
+                passwordField.type = 'password';
+                passwordToggleIcon.src = 'https://img.icons8.com/ios/50/000000/visible.png'; 
+            }
+        }
+
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+          
+            window.location.href = 'home.html'; 
+        });
+    </script>
+</body>
+</html>
